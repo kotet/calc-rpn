@@ -1,17 +1,7 @@
-SUBDIRS := $(shell find * -type d)
-
 all:
-	@list='$(SUBDIRS)'; for subdir in $$list; do \
-	$(MAKE) -C $$subdir || exit 1;\
-	done
-
-
+	@make -C src
 test:
-	@list='$(SUBDIRS)'; for subdir in $$list; do \
-	$(MAKE) test -C $$subdir || exit 1;\
-	done
+	@make test -C src
 
 clean:
-	@list='$(SUBDIRS)'; for subdir in $$list; do \
-	$(MAKE) clean -C $$subdir;\
-	done
+	@make clean -C src
